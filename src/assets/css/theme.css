@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700&display=swap");
+
+:root {
+  --color-body-background: 40, 48, 72;
+  --color-body-text: 255, 255, 255;
+  --color-body-link: 255, 255, 255;
+  --color-app-background: 255, 255, 255;
+  --color-app-text: 68, 68, 68;
+  --color-app-icon: 133, 147, 152;
+  --color-app-border: 221, 221, 221;
+  --color-info-background: 223, 237, 243;
+  --color-info-border: 0, 171, 255;
+  --color-success-background: 220, 232, 220;
+  --color-success-border: 0, 128, 0;
+  --color-warning-background: 251, 227, 184;
+  --color-warning-border: 255, 165, 0;
+  --color-error-background: 243, 228, 228;
+  --color-error-border: 255, 0, 0;
+  --color-progress-bar: 74, 84, 101;
+  --color-progress-track: 133, 147, 152;
+  --color-btn-background: 102, 116, 121;
+  --color-btn-background-hover: 94, 106, 119;
+  --color-btn-background-active: 63, 73, 92;
+  --color-btn-text: 255, 255, 255;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: rgb(var(--color-body-background));
+  font: 1.1rem "Open Sans", sans-serif;
+  color: rgb(var(--color-body-text));
+}
+
+body.bgImgTopLoaded:before,
+body.bgImgBottomLoaded:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body.bgImgTopLoaded:before {
+  top: 0;
+  background-image: linear-gradient(to bottom, rgb(var(--color-body-background)), rgba(var(--color-body-background), 0.9), rgb(var(--color-body-background))), var(--background-image-top);
+  z-index: -10;
+}
+
+body.bgImgBottomLoaded:after {
+  bottom: 0;
+  background-image: linear-gradient(to top, rgb(var(--color-body-background)), rgba(var(--color-body-background), 0.8), rgb(var(--color-body-background))), var(--background-image-bottom);
+  z-index: -20;
+}
+
+a {
+  color: rgb(var(--color-body-link));
+  text-decoration: none;
+}
