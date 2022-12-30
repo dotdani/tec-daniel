@@ -1,13 +1,13 @@
 <template>
   <footer>
-    <a href="/" title="Ir a la página principal">
+    <a href="/" v-tooltip="{content: 'Ir a la página principal', classes: 'white'}">
       <span>
         <Icon :icon="footer.site.logo"/>
         <span>{{ footer.site.name }}</span>
       </span>
     </a>
     <div v-if="links.length">
-        <a v-for="(link, index) in links" :key="index" :href="link.url" :title="link.title" target="_blank">
+        <a v-for="(link, index) in links" :key="index" :href="link.url" v-tooltip="{content: link.title, classes: 'white'}" target="_blank">
           <Icon :icon="link.icon"/>
         </a>
     </div>

@@ -1,11 +1,11 @@
 <template>
   <header>
-    <a href="/" @click.prevent="toggler = !toggler" title="Ampliar imagen" id="photo">
+    <a href="/" @click.prevent="toggler = !toggler" v-tooltip="{content: 'Ampliar imagen', classes: 'white'}" id="photo">
       <img alt="Fotografía de perfil" v-onload="header.avatarFilePath"/>
     </a>
     <div id="title">
       <h1>
-        <a href="/" title="Ir a la página principal">
+        <a href="/" v-tooltip="{content: 'Ir a la página principal', classes: 'white'}">
           {{ header.title }}
         </a>
       </h1>

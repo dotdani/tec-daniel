@@ -123,7 +123,7 @@
       Promise.allSettled(this.promises)
         .then(results => {
           results.forEach(result => {
-            if (result.status === 'fulfilled' && result.value.name) {
+            if (!this.error && result.status === 'fulfilled' && result.value.name) {
               switch (result.value.name) {
                 case 'bgImgTop':
                   document.body.style.setProperty('--background-image-top', `url(${result.value.src})`)
@@ -169,36 +169,96 @@
   }
   
   .tooltip .tooltip-inner {
-    padding: 0.3rem 0.5rem;
-    background: rgba(var(--color-body-background), 0.95);
-    border-radius: 0.3rem;
+    padding: 0.313rem 0.5rem;
+    border-radius: 0.313rem;
     font-size: 0.8rem;
+  }
+  
+  .tooltip.white .tooltip-inner {
+    background: rgba(var(--color-app-background), 0.95);
+    color: rgb(var(--color-app-text));
+  }
+  
+  .tooltip:not(.white) .tooltip-inner {
+    background: rgba(var(--color-body-background), 0.95);
     color: rgb(var(--color-body-text));
   }
   
   .tooltip .tooltip-arrow {
     position: absolute;
-    margin: 5px;
+    margin: 0.313rem;
     width: 0;
     height: 0;
     border-style: solid;
-    border-color: rgba(var(--color-body-background), 0.95);
     z-index: 1;
   }
   
+  .tooltip.white .tooltip-arrow {
+    border-color: rgba(var(--color-app-background), 0.95);
+  }
+  
+  .tooltip:not(.white) .tooltip-arrow {
+    border-color: rgba(var(--color-body-background), 0.95);
+  }
+  
+  .tooltip[x-placement^="top"] {
+    margin-bottom: 0.5rem;
+  }
+
+  .tooltip[x-placement^="top"] .tooltip-arrow {
+    bottom: -0.313rem;
+    left: calc(50% - 0.313rem);
+    margin-top: 0;
+    margin-bottom: 0;
+    border-width: 0.313rem 0.313rem 0 0.313rem;
+    border-left-color: transparent !important;
+    border-right-color: transparent !important;
+    border-bottom-color: transparent !important;
+  }
+  
+  .tooltip[x-placement^="right"] {
+    margin-left: 0.5rem;
+  }
+
+  .tooltip[x-placement^="right"] .tooltip-arrow {
+    top: calc(50% - 0.313rem);
+    left: -0.313rem;
+    margin-left: 0;
+    margin-right: 0;
+    border-width: 0.313rem 0.313rem 0.313rem 0;
+    border-left-color: transparent !important;
+    border-top-color: transparent !important;
+    border-bottom-color: transparent !important;
+  }
+  
   .tooltip[x-placement^="bottom"] {
-    margin-top: 8px;
+    margin-top: 0.5rem;
   }
   
   .tooltip[x-placement^="bottom"] .tooltip-arrow {
-    left: calc(50% - 5px);
-    top: -5px;
+    top: -0.313rem;
+    left: calc(50% - 0.313rem);
     margin-top: 0;
     margin-bottom: 0;
-    border-width: 0 5px 5px 5px;
+    border-width: 0 0.313rem 0.313rem 0.313rem;
     border-left-color: transparent !important;
     border-right-color: transparent !important;
     border-top-color: transparent !important;
+  }
+  
+  .tooltip[x-placement^="left"] {
+    margin-right: 0.5rem;
+  }
+
+  .tooltip[x-placement^="left"] .tooltip-arrow {
+    top: calc(50% - 0.313rem);
+    right: -0.313rem;
+    margin-left: 0;
+    margin-right: 0;
+    border-width: 0.313rem 0 0.313rem 0.313rem;
+    border-top-color: transparent !important;
+    border-right-color: transparent !important;
+    border-bottom-color: transparent !important;
   }
   
   .tooltip[aria-hidden='true'] {
