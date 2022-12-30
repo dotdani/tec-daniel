@@ -7,7 +7,7 @@
       </span>
     </a>
     <div v-if="links.length">
-        <a v-for="(link, index) in links" :key="index" :href="link.url" :title="'Visitar «' + link.title + '»'" target="_blank">
+        <a v-for="(link, index) in links" :key="index" :href="link.url" :title="link.title" target="_blank">
           <Icon :icon="link.icon"/>
         </a>
     </div>
