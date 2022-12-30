@@ -4,11 +4,7 @@
       <img alt="Fotografía de perfil" v-onload="header.avatarFilePath"/>
     </a>
     <div id="title">
-      <h1>
-        <a href="/" v-tooltip="{content: 'Ir a la página principal', classes: 'white'}">
-          {{ header.title }}
-        </a>
-      </h1>
+      <h1>{{ header.title }}</h1>
       <p><Icon :icon="header.professionIcon"/> {{ header.profession }}</p>
       <p><Icon :icon="header.locationIcon"/> {{ header.location }}</p>
     </div>
@@ -44,10 +40,6 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 2.5rem;
-  }
-  
-  a {
-    flex: 0 8.8rem 0;
   }
   
   #photo {

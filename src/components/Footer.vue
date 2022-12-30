@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <a href="/" v-tooltip="{content: 'Ir a la página principal', classes: 'white'}">
+    <a href="#top" v-tooltip="{content: 'Ir al inicio de la página', classes: 'white'}">
       <span>
         <Icon :icon="footer.site.logo"/>
         <span>{{ footer.site.name }}</span>
