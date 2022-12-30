@@ -13,7 +13,7 @@
         <li v-for="(knowledge, index) in knowledgeList" :key="index">
           <span v-tooltip.bottom="knowledge.progress < 100 && 'Dominio: ' + knowledge.progress + '%'">
             <span>{{ knowledge.label }}</span>
-            <span :class="{ 'meter': true, 'hidden': knowledge.progress === 100 }">
+            <span :class="{ 'metric': true, 'hidden': knowledge.progress === 100 }">
               <span :style="{width: knowledge.progress + '%'}"></span>
             </span>
           </span>
@@ -110,8 +110,8 @@
     visibility: hidden;
   }
   
-  .meter,
-  .meter span {
+  .metric,
+  .metric span {
     display: inline-block;
     height: 0.2rem !important;
     border-radius: 1rem;
@@ -119,14 +119,14 @@
     font-size: 0;
   }
   
-  .meter {
+  .metric {
     width: 100%;
     background-color: rgb(var(--color-progress-bar));
     background: rgba(var(--color-progress-track), 0.5);
     text-align: left;
   }
   
-  .meter span {
+  .metric span {
     background-color: rgb(var(--color-progress-bar));
   }
   
@@ -177,10 +177,6 @@
     li {
       display: block;
       margin-left: 0 !important;
-    }
-    
-    .meter {
-      visibility: hidden;
     }
   }
 </style>

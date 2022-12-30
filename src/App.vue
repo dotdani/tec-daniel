@@ -169,8 +169,8 @@
   }
   
   .tooltip .tooltip-inner {
-    padding: 0.313rem 0.5rem;
-    border-radius: 0.313rem;
+    padding: 0.32rem 0.5rem;
+    border-radius: 0.32rem;
     font-size: 0.8rem;
   }
   
@@ -186,7 +186,7 @@
   
   .tooltip .tooltip-arrow {
     position: absolute;
-    margin: 0.313rem;
+    margin: 0.32rem;
     width: 0;
     height: 0;
     border-style: solid;
@@ -206,11 +206,11 @@
   }
 
   .tooltip[x-placement^="top"] .tooltip-arrow {
-    bottom: -0.313rem;
-    left: calc(50% - 0.313rem);
+    bottom: -0.32rem;
+    left: calc(50% - 0.32rem);
     margin-top: 0;
     margin-bottom: 0;
-    border-width: 0.313rem 0.313rem 0 0.313rem;
+    border-width: 0.32rem 0.32rem 0 0.32rem;
     border-left-color: transparent !important;
     border-right-color: transparent !important;
     border-bottom-color: transparent !important;
@@ -221,11 +221,11 @@
   }
 
   .tooltip[x-placement^="right"] .tooltip-arrow {
-    top: calc(50% - 0.313rem);
-    left: -0.313rem;
+    top: calc(50% - 0.32rem);
+    left: -0.32rem;
     margin-left: 0;
     margin-right: 0;
-    border-width: 0.313rem 0.313rem 0.313rem 0;
+    border-width: 0.32rem 0.32rem 0.32rem 0;
     border-left-color: transparent !important;
     border-top-color: transparent !important;
     border-bottom-color: transparent !important;
@@ -236,11 +236,11 @@
   }
   
   .tooltip[x-placement^="bottom"] .tooltip-arrow {
-    top: -0.313rem;
-    left: calc(50% - 0.313rem);
+    top: -0.32rem;
+    left: calc(50% - 0.32rem);
     margin-top: 0;
     margin-bottom: 0;
-    border-width: 0 0.313rem 0.313rem 0.313rem;
+    border-width: 0 0.32rem 0.32rem 0.32rem;
     border-left-color: transparent !important;
     border-right-color: transparent !important;
     border-top-color: transparent !important;
@@ -251,11 +251,11 @@
   }
 
   .tooltip[x-placement^="left"] .tooltip-arrow {
-    top: calc(50% - 0.313rem);
-    right: -0.313rem;
+    top: calc(50% - 0.32rem);
+    right: -0.32rem;
     margin-left: 0;
     margin-right: 0;
-    border-width: 0.313rem 0 0.313rem 0.313rem;
+    border-width: 0.32rem 0 0.32rem 0.32rem;
     border-top-color: transparent !important;
     border-right-color: transparent !important;
     border-bottom-color: transparent !important;
@@ -271,11 +271,5 @@
     visibility: visible;
     opacity: 1;
     transition: opacity 0.15s;
-  }
-  
-  @media only screen and (max-width: 760px) {
-    .tooltip {
-      visibility: hidden !important;
-    }
   }
 </style>
